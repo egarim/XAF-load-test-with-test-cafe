@@ -4,6 +4,7 @@ import { Selector } from 'testcafe';
 fixture `Use XPath selectors`
     .page('https://xafblazortest.bitframeworks.com/');
 
+
 test('login', async t => {
     const Username  = XPathSelector('/html/body/app/div[2]/div[2]/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div[2]/div/div[1]/div/div/div[2]/div[1]/div/input');
     //const LoginButtonFromXpath  = XPathSelector('/html/body/app/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[3]/button');
