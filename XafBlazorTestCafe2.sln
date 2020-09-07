@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XafBlazorTestCafe2.Module", "XafBlazorTestCafe2.Module\XafBlazorTestCafe2.Module.csproj", "{266A0F15-7283-4755-8832-D3FBC15C05D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XafBlazorTestCafe2.Module.Blazor", "XafBlazorTestCafe2.Module.Blazor\XafBlazorTestCafe2.Module.Blazor.csproj", "{0F103473-684D-474F-9580-8A0F8495A2BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XafBlazorTestCafe2.Blazor.Server", "XafBlazorTestCafe2.Blazor.Server\XafBlazorTestCafe2.Blazor.Server.csproj", "{4931224E-AF78-4A79-800D-C9ADFC50B3F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestCafe", "TestCafe", "{880F661A-2084-4742-9D9A-1FAC017FC5B0}"
+	ProjectSection(SolutionItems) = preProject
+		TestCafe\README.md = TestCafe\README.md
+		TestCafe\XafBlazorTest.js = TestCafe\XafBlazorTest.js
+		TestCafe\xpath-selector.js = TestCafe\xpath-selector.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		EasyTest|Any CPU = EasyTest|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{266A0F15-7283-4755-8832-D3FBC15C05D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{266A0F15-7283-4755-8832-D3FBC15C05D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{266A0F15-7283-4755-8832-D3FBC15C05D0}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{266A0F15-7283-4755-8832-D3FBC15C05D0}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{266A0F15-7283-4755-8832-D3FBC15C05D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{266A0F15-7283-4755-8832-D3FBC15C05D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F103473-684D-474F-9580-8A0F8495A2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F103473-684D-474F-9580-8A0F8495A2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F103473-684D-474F-9580-8A0F8495A2BA}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{0F103473-684D-474F-9580-8A0F8495A2BA}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{0F103473-684D-474F-9580-8A0F8495A2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F103473-684D-474F-9580-8A0F8495A2BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4931224E-AF78-4A79-800D-C9ADFC50B3F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4931224E-AF78-4A79-800D-C9ADFC50B3F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4931224E-AF78-4A79-800D-C9ADFC50B3F2}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{4931224E-AF78-4A79-800D-C9ADFC50B3F2}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{4931224E-AF78-4A79-800D-C9ADFC50B3F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4931224E-AF78-4A79-800D-C9ADFC50B3F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3B6613F-0E39-477E-BE7D-F794E3FDA899}
+	EndGlobalSection
+EndGlobal
