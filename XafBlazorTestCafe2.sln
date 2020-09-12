@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestCafe", "TestCafe", "{880F661A-2084-4742-9D9A-1FAC017FC5B0}"
 	ProjectSection(SolutionItems) = preProject
 		TestCafe\README.md = TestCafe\README.md
+		TestCafe\RunFirefoxHeadLess.bat = TestCafe\RunFirefoxHeadLess.bat
 		TestCafe\XafBlazorTest.js = TestCafe\XafBlazorTest.js
 		TestCafe\xpath-selector.js = TestCafe\xpath-selector.js
 	EndProjectSection
