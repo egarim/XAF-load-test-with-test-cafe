@@ -8,13 +8,13 @@ namespace SimulationRunner
     {
         static void Main(string[] args)
         {
-            if (string.IsNullOrEmpty(args[0]))
-                args[0] = "100";
+           
 
             string cleaned = File.ReadAllText("data.txt").Replace("\n", "").Replace("\r", "");
             int clients = int.Parse(args[0]);
             for (int i = 0; i < clients; i++)
             {
+                System.Threading.Thread.Sleep(10000);
                 Console.WriteLine($"starting test {i}");
                 ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
                 startInfo.FileName = "RunChromeHeadLess.bat";

@@ -4,6 +4,6 @@ for i in {0..100}
 do
   echo "Staring test : $i"
   ( testcafe "chrome:headless" XafBlazorTest.js -e & )
-  echo "Waiting for 2 seconds..."
-  sleep 5
+  echo "Waiting for 10 seconds..."
+  sleep 10
 done
