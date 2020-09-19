@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace SimulationRunner
 {
@@ -7,8 +8,9 @@ namespace SimulationRunner
     {
         static void Main(string[] args)
         {
-            int Clients = int.Parse(args[0]);
-            for (int i = 0; i < Clients; i++)
+            string cleaned = File.ReadAllText("data.txt").Replace("\n", "").Replace("\r", "");
+            int clients = int.Parse(args[0]);
+            for (int i = 0; i < clients; i++)
             {
                 Console.WriteLine($"starting test {i}");
                 ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();

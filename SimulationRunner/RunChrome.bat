@@ -1,0 +1,1 @@
+testcafe "chrome" XafBlazorTest.js -e

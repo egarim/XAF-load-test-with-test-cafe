@@ -6,12 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data.txt" />
     <None Remove="RunChromeHeadLess.bat" />
     <None Remove="XafBlazorTest.js" />
     <None Remove="xpath-selector.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Data.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="RunChromeHeadLess.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
