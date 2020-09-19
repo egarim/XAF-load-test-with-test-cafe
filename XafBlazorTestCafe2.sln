@@ -10,12 +10,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XafBlazorTestCafe2.Blazor.Server", "XafBlazorTestCafe2.Blazor.Server\XafBlazorTestCafe2.Blazor.Server.csproj", "{4931224E-AF78-4A79-800D-C9ADFC50B3F2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestCafe", "TestCafe", "{880F661A-2084-4742-9D9A-1FAC017FC5B0}"
-	ProjectSection(SolutionItems) = preProject
-		TestCafe\README.md = TestCafe\README.md
-		TestCafe\RunFirefoxHeadLess.bat = TestCafe\RunFirefoxHeadLess.bat
-		TestCafe\XafBlazorTest.js = TestCafe\XafBlazorTest.js
-		TestCafe\xpath-selector.js = TestCafe\xpath-selector.js
-	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulationRunner", "SimulationRunner\SimulationRunner.csproj", "{C42FC66D-821F-455B-B8D4-8EE489E82294}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +38,12 @@ Global
 		{4931224E-AF78-4A79-800D-C9ADFC50B3F2}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{4931224E-AF78-4A79-800D-C9ADFC50B3F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4931224E-AF78-4A79-800D-C9ADFC50B3F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C42FC66D-821F-455B-B8D4-8EE489E82294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C42FC66D-821F-455B-B8D4-8EE489E82294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C42FC66D-821F-455B-B8D4-8EE489E82294}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{C42FC66D-821F-455B-B8D4-8EE489E82294}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{C42FC66D-821F-455B-B8D4-8EE489E82294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C42FC66D-821F-455B-B8D4-8EE489E82294}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

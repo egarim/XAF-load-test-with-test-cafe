@@ -1,0 +1,1 @@
+testcafe "chrome:headless" XafBlazorTest.js -e

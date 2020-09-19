@@ -8,6 +8,7 @@ using DevExpress.ExpressApp.Xpo;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using XafBlazorTestCafe2.Blazor.Server.Services;
+using XafBlazorTestCafe2.Module.BusinessObjects;
 
 namespace XafBlazorTestCafe2.Blazor.Server {
     public partial class XafBlazorTestCafe2BlazorApplication : BlazorApplication {
@@ -22,6 +23,8 @@ namespace XafBlazorTestCafe2.Blazor.Server {
             InitializeComponent();
             SetupAuthentication();
             this.securityStrategyComplex1.RegisterXPOAdapterProviders();
+            this.securityStrategyComplex1.AnonymousAllowedTypes.Add(typeof(Login));
+            this.securityStrategyComplex1.AnonymousAllowedTypes.Add(typeof(LoginCount));
         }
         private void SetupAuthentication() {
             this.authenticationMixed1.LogonParametersType = typeof(DevExpress.ExpressApp.Security.AuthenticationStandardLogonParameters);
@@ -29,12 +32,23 @@ namespace XafBlazorTestCafe2.Blazor.Server {
             this.authenticationMixed1.AddAuthenticationStandardProvider(typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser));
             this.authenticationMixed1.AddIdentityAuthenticationProvider(typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser));
         }
+       
         protected override void OnSetupStarted() {
             base.OnSetupStarted();
             IConfiguration configuration = ServiceProvider.GetRequiredService<IConfiguration>();
-            if(configuration.GetConnectionString("ConnectionString") != null) {
-                ConnectionString = configuration.GetConnectionString("ConnectionString");
+            if(System.Diagnostics.Debugger.IsAttached)
+            {
+                ConnectionString = InMemoryDataStoreProvider.ConnectionString; 
             }
+            else
+            {
+                if (configuration.GetConnectionString("ConnectionString") != null)
+                {
+                    ConnectionString = configuration.GetConnectionString("ConnectionString");
+                }
+            }
+           
+
 #if EASYTEST
             if(configuration.GetConnectionString("EasyTestConnectionString") != null) {
                 ConnectionString = configuration.GetConnectionString("EasyTestConnectionString");
@@ -50,6 +64,7 @@ namespace XafBlazorTestCafe2.Blazor.Server {
             IXpoDataStoreProvider dataStoreProvider = GetDataStoreProvider(args.ConnectionString, args.Connection);
             args.ObjectSpaceProviders.Add(new SecuredObjectSpaceProvider((ISelectDataSecurityProvider)Security, dataStoreProvider, true));
             args.ObjectSpaceProviders.Add(new NonPersistentObjectSpaceProvider(TypesInfo, null));
+            ((SecuredObjectSpaceProvider)args.ObjectSpaceProviders[0]).AllowICommandChannelDoWithSecurityContext = true;
         }
         private IXpoDataStoreProvider GetDataStoreProvider(string connectionString, System.Data.IDbConnection connection) {
             XpoDataStoreProviderAccessor accessor = ServiceProvider.GetRequiredService<XpoDataStoreProviderAccessor>();
@@ -88,6 +103,25 @@ namespace XafBlazorTestCafe2.Blazor.Server {
         protected override void OnLoggingOn(LogonEventArgs args)
         {
             base.OnLoggingOn(args);
+            var os = this.CreateObjectSpace(typeof(Login));
+            LoginCount lc = null;
+            if (os.GetObjectsCount(typeof(LoginCount), null) == 0)
+            {
+               
+                lc = os.CreateObject<LoginCount>();
+                lc.Count = 0;
+            }
+            else
+            {
+                lc = os.GetObjects<LoginCount>()[0];
+            }
+            lc.Count++;
+      
+            var Login = os.CreateObject<Login>();
+            Login.UserName = "Admin";
+            if (os.IsModified)
+                os.CommitChanges();
+
         }
     }
 }

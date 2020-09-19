@@ -14,7 +14,8 @@ using DevExpress.Persistent.Validation;
 
 namespace XafBlazorTestCafe2.Module.BusinessObjects
 {
-    [DefaultClassOptions]
+
+        [DefaultClassOptions]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
     //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]

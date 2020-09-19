@@ -11,6 +11,7 @@ using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
+using XafBlazorTestCafe2.Module.BusinessObjects;
 
 namespace XafBlazorTestCafe2.Module.DatabaseUpdate {
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Updating.ModuleUpdater
@@ -50,6 +51,14 @@ namespace XafBlazorTestCafe2.Module.DatabaseUpdate {
             }
             adminRole.IsAdministrative = true;
 			userAdmin.Roles.Add(adminRole);
+
+
+            //if (ObjectSpace.GetObjectsCount(typeof(LoginCount), null) == 0)
+            //{
+            //    var lc= ObjectSpace.CreateObject<LoginCount>();
+            //    lc.Count = 0;
+            //}
+
             ObjectSpace.CommitChanges(); //This line persists created object(s).
         }
         public override void UpdateDatabaseBeforeUpdateSchema() {
